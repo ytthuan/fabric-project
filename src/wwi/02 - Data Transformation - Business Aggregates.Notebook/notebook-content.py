@@ -48,9 +48,9 @@ spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 
 # CELL ********************
 
-df_fact_sale = spark.read.table("wwilakehouse.fact_sale") 
-df_dimension_date = spark.read.table("wwilakehouse.dimension_date")
-df_dimension_city = spark.read.table("wwilakehouse.dimension_city")
+df_fact_sale = spark.read.table("dbo.fact_sale") 
+df_dimension_date = spark.read.table("dbo.dimension_date")
+df_dimension_city = spark.read.table("dbo.dimension_city")
 
 # METADATA ********************
 
@@ -77,7 +77,7 @@ sale_by_date_city = df_fact_sale.alias("sale") \
 .withColumnRenamed("sum(Profit)", "SumOfProfit")\
 .orderBy("date.Date", "city.StateProvince", "city.City")
 
-sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/aggregate_sale_by_date_city")
+sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").saveAsTable("dbo.aggregate_sale_by_date_city")
 
 # METADATA ********************
 
@@ -104,9 +104,9 @@ sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchem
 # MAGIC 	,SUM(FS.TaxAmount) SumOfTaxAmount
 # MAGIC 	,SUM(FS.TotalIncludingTax) SumOfTotalIncludingTax
 # MAGIC 	,SUM(Profit) SumOfProfit 
-# MAGIC FROM wwilakehouse.fact_sale FS
-# MAGIC INNER JOIN wwilakehouse.dimension_date DD ON FS.InvoiceDateKey = DD.Date
-# MAGIC INNER JOIN wwilakehouse.dimension_Employee DE ON FS.SalespersonKey = DE.EmployeeKey
+# MAGIC FROM dbo.fact_sale FS
+# MAGIC INNER JOIN dbo.dimension_date DD ON FS.InvoiceDateKey = DD.Date
+# MAGIC INNER JOIN dbo.dimension_Employee DE ON FS.SalespersonKey = DE.EmployeeKey
 # MAGIC GROUP BY DD.Date, DD.CalendarMonthLabel, DD.Day, DD.ShortMonth, DD.CalendarYear, DE.PreferredName, DE.Employee
 # MAGIC ORDER BY DD.Date ASC, DE.PreferredName ASC, DE.Employee ASC
 
@@ -124,7 +124,7 @@ sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchem
 # CELL ********************
 
 sale_by_date_employee = spark.sql("SELECT * FROM sale_by_date_employee")
-sale_by_date_employee.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/aggregate_sale_by_date_employee")
+sale_by_date_employee.write.mode("overwrite").format("delta").option("overwriteSchema", "true").saveAsTable("dbo.aggregate_sale_by_date_employee")
 
 # METADATA ********************
 
