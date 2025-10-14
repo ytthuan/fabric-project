@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Load WWI data to bakehouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "279482c5-248a-83ee-4fcd-2204d0cf7f4e"
+  }
+}

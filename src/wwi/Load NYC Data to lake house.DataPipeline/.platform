@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Load NYC Data to lake house"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "77f0d7b3-de4b-9e82-4e58-859ce28cebd0"
+  }
+}
