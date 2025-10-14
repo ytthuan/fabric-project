@@ -58,7 +58,7 @@ df = df.withColumn('Year', year(col("InvoiceDateKey")))
 df = df.withColumn('Quarter', quarter(col("InvoiceDateKey")))
 df = df.withColumn('Month', month(col("InvoiceDateKey")))
 
-df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/" + table_name)
+df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").saveAsTable(f"dbo.{table_name}")
 
 # METADATA ********************
 
@@ -79,7 +79,7 @@ from pyspark.sql.types import *
 def loadFullDataFromSource(table_name):
     df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
     df = df.select([c for c in df.columns if c != 'Photo'])
-    df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
+    df.write.mode("overwrite").format("delta").saveAsTable(f"dbo.{table_name}")
 
 full_tables = [
     'dimension_city',
