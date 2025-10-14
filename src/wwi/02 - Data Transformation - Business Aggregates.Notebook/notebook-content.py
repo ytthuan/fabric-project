@@ -104,9 +104,9 @@ sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchem
 # MAGIC 	,SUM(FS.TaxAmount) SumOfTaxAmount
 # MAGIC 	,SUM(FS.TotalIncludingTax) SumOfTotalIncludingTax
 # MAGIC 	,SUM(Profit) SumOfProfit 
-# MAGIC FROM dbo.fact_sale FS
-# MAGIC INNER JOIN dbo.dimension_date DD ON FS.InvoiceDateKey = DD.Date
-# MAGIC INNER JOIN dbo.dimension_Employee DE ON FS.SalespersonKey = DE.EmployeeKey
+# MAGIC FROM fact_sale FS
+# MAGIC INNER JOIN dimension_date DD ON FS.InvoiceDateKey = DD.Date
+# MAGIC INNER JOIN dimension_Employee DE ON FS.SalespersonKey = DE.EmployeeKey
 # MAGIC GROUP BY DD.Date, DD.CalendarMonthLabel, DD.Day, DD.ShortMonth, DD.CalendarYear, DE.PreferredName, DE.Employee
 # MAGIC ORDER BY DD.Date ASC, DE.PreferredName ASC, DE.Employee ASC
 
@@ -120,6 +120,24 @@ sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchem
 # MARKDOWN ********************
 
 # In this cell, you are reading from the temporary Spark view created in the previous cell and and finally writing it as delta table in the _Tables_ section of the lakehouse.
+
+# CELL ********************
+
+# Check what tables exist and in which schemas
+spark.sql("SHOW TABLES").show()
+
+# Check available schemas/databases
+spark.sql("SHOW SCHEMAS").show()
+
+# Check current database
+print(f"Current database: {spark.catalog.currentDatabase()}")
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
