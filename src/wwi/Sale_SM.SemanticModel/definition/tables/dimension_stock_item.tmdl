@@ -1,0 +1,219 @@
+table dimension_stock_item
+	lineageTag: a27795d0-b433-4ac3-bc4e-e3ff43114ae9
+	sourceLineageTag: [dbo].[dimension_stock_item]
+
+	column LineageKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ef7261cc-d5cc-4346-b159-008ab2a3e8c0
+		sourceLineageTag: LineageKey
+		summarizeBy: none
+		sourceColumn: LineageKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column TaxRate
+		dataType: double
+		sourceProviderType: decimal(18, 3)
+		lineageTag: 4a574816-e3c6-40e8-a05e-df29a2f2a04a
+		sourceLineageTag: TaxRate
+		summarizeBy: none
+		sourceColumn: TaxRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: double
+		sourceProviderType: decimal(18, 2)
+		lineageTag: 7f33cc10-0d66-4216-bd1a-81e4323cb70b
+		sourceLineageTag: UnitPrice
+		summarizeBy: none
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RecommendedRetailPrice
+		dataType: double
+		sourceProviderType: decimal(18, 2)
+		lineageTag: c96e342d-9dbb-43cf-9eb4-05cd0df24975
+		sourceLineageTag: RecommendedRetailPrice
+		summarizeBy: none
+		sourceColumn: RecommendedRetailPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TypicalWeightPerUnit
+		dataType: double
+		sourceProviderType: decimal(18, 3)
+		lineageTag: 3c8c0910-f085-4423-9e63-b27db4d1828f
+		sourceLineageTag: TypicalWeightPerUnit
+		summarizeBy: none
+		sourceColumn: TypicalWeightPerUnit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ValidFrom
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 4a0816ce-5c0b-4268-8f16-4546a2952e65
+		sourceLineageTag: ValidFrom
+		summarizeBy: none
+		sourceColumn: ValidFrom
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidTo
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1c827bfd-bdbd-4757-a2e9-4b3b582ebe57
+		sourceLineageTag: ValidTo
+		summarizeBy: none
+		sourceColumn: ValidTo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b9b97f2a-009e-4dfa-baa0-fe34445b7b49
+		sourceLineageTag: Brand
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ae319551-56a5-46cd-8219-1447045a0b22
+		sourceLineageTag: Size
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeadTimeDays
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 16ce39dc-288d-4aac-af18-20f80c78baf2
+		sourceLineageTag: LeadTimeDays
+		summarizeBy: none
+		sourceColumn: LeadTimeDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuantityPerOuter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0b3e0e19-a821-4424-9d66-a782034c6609
+		sourceLineageTag: QuantityPerOuter
+		summarizeBy: none
+		sourceColumn: QuantityPerOuter
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsChillerStock
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 57bbdd1c-ad7c-4219-9a69-35e12d371350
+		sourceLineageTag: IsChillerStock
+		summarizeBy: none
+		sourceColumn: IsChillerStock
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barcode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4c8fab3e-a132-4041-8358-a505d7afe7ce
+		sourceLineageTag: Barcode
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockItemKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 43226729-5f56-4fe6-8630-05a39b38a2b5
+		sourceLineageTag: StockItemKey
+		summarizeBy: none
+		sourceColumn: StockItemKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WWIStockItemID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 407de8e6-b79f-4242-a892-cc078c583e47
+		sourceLineageTag: WWIStockItemID
+		summarizeBy: none
+		sourceColumn: WWIStockItemID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockItem
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9a662fd2-fe4e-4cfe-a5c4-cf6f3dc11558
+		sourceLineageTag: StockItem
+		summarizeBy: none
+		sourceColumn: StockItem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1720b624-0eb2-4042-8333-9bf14e89f991
+		sourceLineageTag: Color
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellingPackage
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 90f47d8c-d9fd-427c-9b3b-94e7bacd3a0e
+		sourceLineageTag: SellingPackage
+		summarizeBy: none
+		sourceColumn: SellingPackage
+
+		annotation SummarizationSetBy = Automatic
+
+	column BuyingPackage
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 15c562af-066d-4cd4-97cd-1c24941b6357
+		sourceLineageTag: BuyingPackage
+		summarizeBy: none
+		sourceColumn: BuyingPackage
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_stock_item = entity
+		mode: directLake
+		source
+			entityName: dimension_stock_item
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
