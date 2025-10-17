@@ -179,3 +179,15 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Embedding PBI web app (Vue/Vite)
+embeddingpbi/node_modules/
+embeddingpbi/dist/
+embeddingpbi/.env
+embeddingpbi/.env.local
+embeddingpbi/.DS_Store
+embedded/AppOwnsData/.env
+embedded/AppOwnsData/flask_session/
+.playwright-mcp/
+flask_session/
+embedded/AppOwnsData/flask_session/
