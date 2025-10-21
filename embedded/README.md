@@ -32,7 +32,7 @@ Follow the steps on [aka.ms/EmbedForCustomer](https://aka.ms/embedforcustomer)
 
 4. Run the following command in CMD/PowerShell to start the application.<br>
 
-   `flask run`
+   `flask run --host=localhost --port=8000`
 
 
 5. Open **http://localhost:8000** in browser or follow the direction in the output log.
