@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "DataFlow Gen2",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "fabric": {
+      "queryId": "8d616c5c-9536-4ad4-a29c-4a81925ca765",
+      "queryName": "fabric",
+      "loadEnabled": false
+    },
+    "fabric_DataDestination": {
+      "queryId": "a2d51e13-36bd-4ae1-93f9-ffcebd77d9f3",
+      "queryName": "fabric_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://stadminaihub030337719738.blob.core.windows.net/",
+      "kind": "AzureBlobs",
+      "connectionId": "{\"ClusterId\":\"d3f3fcdb-20ee-40de-8974-e6b50be3e26b\",\"DatasourceId\":\"56403c63-1d88-407c-9bc7-7d29b5c5de34\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"d3f3fcdb-20ee-40de-8974-e6b50be3e26b\",\"DatasourceId\":\"ac822069-4bfa-4c65-8b06-4c3b04e2e131\"}"
+    }
+  ]
+}
