@@ -150,3 +150,22 @@ sale_by_date_employee.write.mode("overwrite").format("delta").option("overwriteS
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# CELL ********************
+
+from powerbiclient import QuickVisualize, get_dataset_config, Report
+
+#get data frame by load data from customer dimension
+df = spark.read.table("dbo.dimension_customer")
+
+PBI_visualize = QuickVisualize(get_dataset_config(df))
+PBI_visualize
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark",
+# META   "frozen": false,
+# META   "editable": true
+# META }
