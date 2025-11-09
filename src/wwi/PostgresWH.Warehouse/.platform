@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "PostgresWH"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e283a1d8-4e0b-82f6-4025-4d4c1404a661"
+  }
+}

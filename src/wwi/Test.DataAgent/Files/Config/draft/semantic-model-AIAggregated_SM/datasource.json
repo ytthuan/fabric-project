@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
-  "artifactId": "246c4ec1-4723-40d8-ad7f-ddcbba791dcd",
-  "workspaceId": "33d534a2-dabe-4f41-a95b-f7819c2b0e69",
+  "artifactId": "ba791dcd-ddcb-ad7f-40d8-4723246c4ec1",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
   "dataSourceInstructions": null,
   "displayName": "AIAggregated_SM",
   "type": "semantic_model",
@@ -10,15 +10,42 @@
   "elements": [
     {
       "id": "d2ee7d09-325e-40b6-9e0b-7f1f5632ef87",
-      "is_selected": true,
+      "is_selected": false,
       "display_name": "aggregate_sale_by_date_city",
       "type": "semantic_model.table",
       "description": null,
       "children": [
         {
+          "id": "d38749c6-fa83-4a11-aa59-6176d762fad6",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
           "id": "d7332f4b-2364-469a-a142-99e31e4e793c",
           "is_selected": true,
           "display_name": "CalendarMonthLabel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "864b830f-3645-495d-87f1-5839c45f0385",
+          "is_selected": true,
+          "display_name": "Day",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ad9373d-79c1-4c3e-990d-226d34b2106e",
+          "is_selected": true,
+          "display_name": "ShortMonth",
           "type": "semantic_model.column",
           "data_type": "String",
           "description": null,
@@ -43,18 +70,9 @@
           "children": []
         },
         {
-          "id": "d38749c6-fa83-4a11-aa59-6176d762fad6",
+          "id": "f8afa188-423f-434a-a80e-d4eb6bd360bc",
           "is_selected": true,
-          "display_name": "Date",
-          "type": "semantic_model.column",
-          "data_type": "DateTime",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "864b830f-3645-495d-87f1-5839c45f0385",
-          "is_selected": true,
-          "display_name": "Day",
+          "display_name": "StateProvince",
           "type": "semantic_model.column",
           "data_type": "String",
           "description": null,
@@ -70,27 +88,9 @@
           "children": []
         },
         {
-          "id": "6ad9373d-79c1-4c3e-990d-226d34b2106e",
+          "id": "d0b6172a-e235-41d3-a8d8-788c6b08a0db",
           "is_selected": true,
-          "display_name": "ShortMonth",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "f8afa188-423f-434a-a80e-d4eb6bd360bc",
-          "is_selected": true,
-          "display_name": "StateProvince",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "868d0eb2-fa89-4f59-ab9a-2fc72d7524b8",
-          "is_selected": true,
-          "display_name": "SumOfProfit",
+          "display_name": "SumOfTotalExcludingTax",
           "type": "semantic_model.column",
           "data_type": "Double",
           "description": null,
@@ -106,18 +106,18 @@
           "children": []
         },
         {
-          "id": "d0b6172a-e235-41d3-a8d8-788c6b08a0db",
+          "id": "c5b70658-86c7-4666-a39c-5f1161112e4c",
           "is_selected": true,
-          "display_name": "SumOfTotalExcludingTax",
+          "display_name": "SumOfTotalIncludingTax",
           "type": "semantic_model.column",
           "data_type": "Double",
           "description": null,
           "children": []
         },
         {
-          "id": "c5b70658-86c7-4666-a39c-5f1161112e4c",
+          "id": "868d0eb2-fa89-4f59-ab9a-2fc72d7524b8",
           "is_selected": true,
-          "display_name": "SumOfTotalIncludingTax",
+          "display_name": "SumOfProfit",
           "type": "semantic_model.column",
           "data_type": "Double",
           "description": null,
@@ -127,20 +127,11 @@
     },
     {
       "id": "ebe13b35-f6fe-4dc2-92b7-64d95aea6341",
-      "is_selected": true,
+      "is_selected": false,
       "display_name": "aggregate_sale_by_date_employee",
       "type": "semantic_model.table",
       "description": null,
       "children": [
-        {
-          "id": "fea79e6c-7c9a-4fb6-b1e4-57d93696edab",
-          "is_selected": true,
-          "display_name": "CalendarMonthLabel",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
         {
           "id": "903b0678-c5ca-43bf-9085-c71ae6bbca64",
           "is_selected": true,
@@ -151,18 +142,18 @@
           "children": []
         },
         {
-          "id": "a869840d-290c-456e-a007-343fd515293b",
+          "id": "fea79e6c-7c9a-4fb6-b1e4-57d93696edab",
           "is_selected": true,
-          "display_name": "Day",
+          "display_name": "CalendarMonthLabel",
           "type": "semantic_model.column",
           "data_type": "String",
           "description": null,
           "children": []
         },
         {
-          "id": "3c501196-994c-4e03-90ac-324980618c6f",
+          "id": "a869840d-290c-456e-a007-343fd515293b",
           "is_selected": true,
-          "display_name": "Employee",
+          "display_name": "Day",
           "type": "semantic_model.column",
           "data_type": "String",
           "description": null,
@@ -178,6 +169,15 @@
           "children": []
         },
         {
+          "id": "19097b65-cb75-4cee-9227-fb05cbd19c57",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
           "id": "54b11c30-0748-4abf-ac42-f6e6f69cca54",
           "is_selected": true,
           "display_name": "PreferredName",
@@ -187,9 +187,18 @@
           "children": []
         },
         {
-          "id": "1008d8a0-8e1c-48fe-885f-a10c66e37bbd",
+          "id": "3c501196-994c-4e03-90ac-324980618c6f",
           "is_selected": true,
-          "display_name": "SumOfProfit",
+          "display_name": "Employee",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bd102a06-71f2-4d85-9250-c1744d04ed3f",
+          "is_selected": true,
+          "display_name": "SumOfTotalExcludingTax",
           "type": "semantic_model.column",
           "data_type": "Double",
           "description": null,
@@ -205,15 +214,6 @@
           "children": []
         },
         {
-          "id": "bd102a06-71f2-4d85-9250-c1744d04ed3f",
-          "is_selected": true,
-          "display_name": "SumOfTotalExcludingTax",
-          "type": "semantic_model.column",
-          "data_type": "Double",
-          "description": null,
-          "children": []
-        },
-        {
           "id": "c071a6fc-d9d4-4cd6-8553-36ca764f8963",
           "is_selected": true,
           "display_name": "SumOfTotalIncludingTax",
@@ -223,11 +223,11 @@
           "children": []
         },
         {
-          "id": "19097b65-cb75-4cee-9227-fb05cbd19c57",
+          "id": "1008d8a0-8e1c-48fe-885f-a10c66e37bbd",
           "is_selected": true,
-          "display_name": "Year",
+          "display_name": "SumOfProfit",
           "type": "semantic_model.column",
-          "data_type": "Int64",
+          "data_type": "Double",
           "description": null,
           "children": []
         }

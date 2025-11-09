@@ -30,10 +30,12 @@ table fact_sale
 		sourceProviderType: int
 		lineageTag: e02491ec-d16b-4388-bad1-930251d73f73
 		sourceLineageTag: LineageKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: LineageKey
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column Year
 		dataType: int64
@@ -41,10 +43,12 @@ table fact_sale
 		sourceProviderType: int
 		lineageTag: 898834e8-0480-492f-8a31-2cd67fc592c5
 		sourceLineageTag: Year
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Year
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column Quarter
 		dataType: int64
@@ -52,10 +56,12 @@ table fact_sale
 		sourceProviderType: int
 		lineageTag: 794c1873-173d-46a7-9757-c3381a087cd0
 		sourceLineageTag: Quarter
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Quarter
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column Month
 		dataType: int64
@@ -63,20 +69,24 @@ table fact_sale
 		sourceProviderType: int
 		lineageTag: bef57b93-6c7c-4a34-99a2-775c38d173e6
 		sourceLineageTag: Month
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Month
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column UnitPrice
 		dataType: double
 		sourceProviderType: decimal(18, 2)
 		lineageTag: d19d1a8f-abe4-4adb-a6df-8a293311e5a2
 		sourceLineageTag: UnitPrice
-		summarizeBy: sum
+		summarizeBy: average
 		sourceColumn: UnitPrice
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -171,7 +181,9 @@ table fact_sale
 		summarizeBy: count
 		sourceColumn: WWIInvoiceID
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column Description
 		dataType: string
@@ -210,10 +222,12 @@ table fact_sale
 		sourceProviderType: bigint
 		lineageTag: 60fb9655-433f-4940-a383-243c4148d4a4
 		sourceLineageTag: SaleKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: SaleKey
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column CityKey
 		dataType: int64
@@ -243,10 +257,15 @@ table fact_sale
 		sourceProviderType: int
 		lineageTag: 9f356bcc-4f27-4cbc-937c-566dc716902a
 		sourceLineageTag: BillToCustomerKey
-		summarizeBy: count
+		dataCategory: PostalCode
+		summarizeBy: none
 		sourceColumn: BillToCustomerKey
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataCategory
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
 
 	column StockItemKey
 		dataType: int64

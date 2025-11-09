@@ -1,0 +1,183 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "PostgreSqlTable",
+      "connectionSettings": {
+        "type": "PostgreSql",
+        "externalReferences": {
+          "connection": "a984aadb-4a3c-4051-a7bc-214c1666ae0b"
+        }
+      }
+    },
+    "destination": {
+      "type": "DataWarehouseTable",
+      "connectionSettings": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "33d534a2-dabe-4f41-a95b-f7819c2b0e69",
+          "artifactId": "1404a661-4d4c-4025-82f6-4e0be283a1d8",
+          "endPoint": "qeekmvrd3aheppctyantyu6upm-ui2nkm563jau7kk366azykyone.datawarehouse.fabric.microsoft.com"
+        },
+        "externalReferences": {
+          "connection": "ccb6ab5f-e14e-4808-a6e4-a41aacd623e4"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "0bb4a81c-8dc1-4b06-98b6-4ccb2b03c18c",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "postgres_air",
+            "table": "flight"
+          }
+        },
+        "destination": {
+          "tableOption": "autoCreate",
+          "datasetSettings": {
+            "schema": "postgres_air",
+            "table": "flight"
+          }
+        },
+        "enableStaging": true,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "flight_id",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "flight_id",
+                "physicalType": "int"
+              }
+            },
+            {
+              "source": {
+                "name": "flight_no",
+                "type": "String"
+              },
+              "destination": {
+                "name": "flight_no",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "scheduled_departure",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "scheduled_departure",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "scheduled_arrival",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "scheduled_arrival",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "departure_airport",
+                "type": "String"
+              },
+              "destination": {
+                "name": "departure_airport",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "arrival_airport",
+                "type": "String"
+              },
+              "destination": {
+                "name": "arrival_airport",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "status",
+                "type": "String"
+              },
+              "destination": {
+                "name": "status",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "aircraft_code",
+                "type": "String"
+              },
+              "destination": {
+                "name": "aircraft_code",
+                "physicalType": "varchar",
+                "length": "8000"
+              }
+            },
+            {
+              "source": {
+                "name": "actual_departure",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "actual_departure",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "actual_arrival",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "actual_arrival",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            },
+            {
+              "source": {
+                "name": "update_ts",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "update_ts",
+                "physicalType": "datetime2",
+                "precision": 6
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}
