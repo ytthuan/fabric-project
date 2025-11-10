@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "AdventureWorksDW2022_lh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "818af375-5f1a-ab0f-46ab-b35f1db89db1"
+  }
+}

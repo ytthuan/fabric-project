@@ -1,0 +1,393 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "source": {
+      "type": "SqlServerTable",
+      "connectionSettings": {
+        "type": "SqlServer",
+        "typeProperties": {
+          "database": "AdventureWorksDW2022"
+        },
+        "externalReferences": {
+          "connection": "3ed1b35d-7ee6-41f4-b7f4-f392ddae92b0"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "818af375-5f1a-ab0f-46ab-b35f1db89db1",
+          "rootFolder": "Tables"
+        },
+        "externalReferences": {
+          "connection": "ac822069-4bfa-4c65-8b06-4c3b04e2e131"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "82703d1c-db50-4f08-8d72-541047f4642a",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactAdditionalInternationalProductDescription"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "ProductKey",
+              "CultureName"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactAdditionalInternationalProductDescription"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "a431cfd6-c367-4209-ab37-9f336ee12c15",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactCallCenter"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "FactCallCenterID"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactCallCenter"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "8201c2f3-0570-4190-9b5e-49c5942c2037",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactCurrencyRate"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "CurrencyKey",
+              "DateKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactCurrencyRate"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0034170c-425b-4c5a-b2f0-4aadc2f5e6b5",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactFinance"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "FinanceKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactFinance"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d139edb9-1c3f-4b45-8505-5c8b481e7a54",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactInternetSales"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "SalesOrderNumber",
+              "SalesOrderLineNumber"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactInternetSales"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "44310048-8d04-4ff9-830b-3bce65f07900",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactInternetSalesReason"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "SalesOrderNumber",
+              "SalesOrderLineNumber",
+              "SalesReasonKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactInternetSalesReason"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "b406e961-2965-4f65-9ca1-90e36eabf7f3",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactProductInventory"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "ProductKey",
+              "DateKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactProductInventory"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "0f614825-f8d7-4f84-b209-ca177439f387",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactResellerSales"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "SalesOrderNumber",
+              "SalesOrderLineNumber"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactResellerSales"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "d4082fa2-fc53-4154-97c2-8e094b1ab19c",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactSalesQuota"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "SalesQuotaKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactSalesQuota"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "19205b32-ed6f-4771-a166-77afeba3c4cf",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "FactSurveyResponse"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "SurveyResponseKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_FactSurveyResponse"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}

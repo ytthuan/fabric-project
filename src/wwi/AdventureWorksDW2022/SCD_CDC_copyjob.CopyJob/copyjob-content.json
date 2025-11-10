@@ -1,0 +1,212 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "fullLoadBehavior": "Truncate",
+    "source": {
+      "type": "SqlServerTable",
+      "connectionSettings": {
+        "type": "SqlServer",
+        "typeProperties": {
+          "database": "AdventureWorksDW2022"
+        },
+        "externalReferences": {
+          "connection": "3ed1b35d-7ee6-41f4-b7f4-f392ddae92b0"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "818af375-5f1a-ab0f-46ab-b35f1db89db1",
+          "rootFolder": "Tables"
+        },
+        "externalReferences": {
+          "connection": "ac822069-4bfa-4c65-8b06-4c3b04e2e131"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "f1806339-9c38-4007-bc01-09562153a811",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "DimCustomer"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "CustomerKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_DimCustomer"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "3fbe6f8b-3917-4504-82f9-a7074337c310",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "DimEmployee"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "EmployeeKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_DimEmployee"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cf6c8d4c-3cb9-4746-ba55-0152be21637f",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "DimGeography"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "GeographyKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_DimGeography"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "e24780b4-1d60-402f-a0e6-5652b3fa7221",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "DimProduct"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "ProductKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_DimProduct"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    },
+    {
+      "id": "dcd740b4-9fbf-4079-be19-e3bc2de85c05",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "DimReseller"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental"
+          }
+        },
+        "destination": {
+          "upsertSettings": {
+            "keys": [
+              "ResellerKey"
+            ]
+          },
+          "writeBehavior": "Upsert",
+          "datasetSettings": {
+            "table": "dbo_DimReseller"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}
