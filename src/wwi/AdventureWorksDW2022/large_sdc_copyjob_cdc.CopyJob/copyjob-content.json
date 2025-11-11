@@ -1,7 +1,6 @@
 {
   "properties": {
     "jobMode": "CDC",
-    "fullLoadBehavior": "Truncate",
     "source": {
       "type": "SqlServerTable",
       "connectionSettings": {
@@ -34,7 +33,7 @@
   },
   "activities": [
     {
-      "id": "f1806339-9c38-4007-bc01-09562153a811",
+      "id": "6b720670-08b7-4e18-aabd-baca30cb50f5",
       "properties": {
         "source": {
           "datasetSettings": {
@@ -69,7 +68,7 @@
       }
     },
     {
-      "id": "3fbe6f8b-3917-4504-82f9-a7074337c310",
+      "id": "e1307e77-7473-4904-8754-d238b7ffd64b",
       "properties": {
         "source": {
           "datasetSettings": {
@@ -104,7 +103,7 @@
       }
     },
     {
-      "id": "cf6c8d4c-3cb9-4746-ba55-0152be21637f",
+      "id": "351acfdc-ce50-4dc8-a34d-9e10de1cd2ba",
       "properties": {
         "source": {
           "datasetSettings": {
@@ -139,7 +138,7 @@
       }
     },
     {
-      "id": "e24780b4-1d60-402f-a0e6-5652b3fa7221",
+      "id": "686b60ff-535e-4614-8ed6-b9fc7f91d7e8",
       "properties": {
         "source": {
           "datasetSettings": {
@@ -174,7 +173,7 @@
       }
     },
     {
-      "id": "dcd740b4-9fbf-4079-be19-e3bc2de85c05",
+      "id": "2dd43fcb-c3c3-40a7-bd27-515ce1c6eabf",
       "properties": {
         "source": {
           "datasetSettings": {
