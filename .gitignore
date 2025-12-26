@@ -191,3 +191,4 @@ embedded/AppOwnsData/flask_session/
 .playwright-mcp/
 flask_session/
 embedded/AppOwnsData/flask_session/
+.DS_Store
